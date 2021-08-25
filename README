@@ -1,0 +1,4 @@
+# MongoDB Automation Scripts
+
+## create-collections.js - Script to create collections with validators
+## insert-data.js Script to load data into a collection
