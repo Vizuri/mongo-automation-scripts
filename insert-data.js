@@ -726,3 +726,16 @@ db.provider.insert(
         ]
     }
 );
+
+interaction_oid = new ObjectId();
+db.interaction.insert(
+    { 
+    "_id": interaction_oid,
+    "benefit_verification_no": "1234567",
+    "subject": {
+        "identifier_type": "Type123",
+        "identifier": "123"
+    },
+        "created_dt": new Date(2021, 01, 01, 09, 30, 0, 0),
+    }
+    );

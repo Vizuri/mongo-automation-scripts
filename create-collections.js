@@ -1074,3 +1074,85 @@ db.createCollection("specialty", {
           }
     }
 });
+
+db.createCollection("interaction", {
+    validator:  {
+    "$jsonSchema": {
+      "title": "Interaction",
+      "description": "This document records the details of a Interaction",
+      "bsonType": "object",
+      "properties": {
+        "_id": {
+          "description": "A unique identifier for an Interaction",
+          "bsonType": "objectId"
+        },
+        "benefit_verification_no": {
+          "description": "Benefit Verification Number associated with the interaction",
+          "bsonType": "string",
+          "minLength": 2
+        },
+        "created_dt": {
+          "description": "The Date and Time the interaction was created",
+          "bsonType": "date"
+        },
+        "subject": {
+          "bsonType": "object",
+          "properties": {
+            "identifier_type": {
+              "description": "identifier type of the subject",
+              "bsonType": "string"
+            },
+            "identifier": {
+              "description": "identifier of the subject",
+              "bsonType": "string"
+            }
+          }
+        },
+        "required": [
+          "benefit_verification_no"
+        ]
+      }
+    }
+    }
+});
+
+db.createCollection("interaction", {
+  validator: {
+    "$jsonSchema": {
+      "title": "Interaction",
+      "description": "This document records the details of a Interaction",
+      "bsonType": "object",
+      "properties": {
+        "_id": {
+          "description": "A unique identifier for an Interaction",
+          "bsonType": "objectId"
+        },
+        "benefit_verification_no": {
+          "description": "Benefit Verification Number associated with the interaction",
+          "bsonType": "string",
+          "minLength": 2
+        },
+        "created_dt": {
+          "description": "The Date and Time the interaction was created",
+          "bsonType": "date"
+        },
+        "subject": {
+          "bsonType": "object",
+          "properties": {
+            "identifier_type": {
+              "description": "identifier type of the subject",
+              "bsonType": "string"
+            },
+            "identifier": {
+              "description": "identifier of the subject",
+              "bsonType": "string"
+            }
+          }
+        }
+      },
+        "required": [
+          "benefit_verification_no"
+        ]
+      }
+    }
+});
